@@ -1,0 +1,119 @@
+.navbar {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 1920px;
+  height: 80px;
+  padding: 0 $sectionPadding;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+  background-color: rgba($bg-1, 0.2);
+  // box-shadow: $shadow;
+
+  &__menu {
+    display: none;
+  }
+  &__links {
+    ul {
+      li {
+        list-style: none;
+        margin: 0 30px;
+        button {
+          font-size: 1rem;
+          font-weight: 100;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          text-decoration: none;
+          color: $font-1;
+          background-color: transparent;
+          position: relative;
+          font-size: 1rem;
+          padding: 10px;
+          color: $font-2;
+
+          @keyframes underline-animation {
+            0% {
+              width: 0%;
+            }
+            100% {
+              width: 110%;
+            }
+          }
+
+          &:hover {
+            color: $font-1;
+            &::after {
+              animation: underline-animation 0.15s linear;
+              background-color: $highlight-1;
+              position: absolute;
+              left: -10%;
+              bottom: -5px;
+              content: '';
+              width: 120%;
+              height: 2px;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__logo {
+    span {
+      font-family: 'Cormorant Upright', serif;
+      font-size: 110px;
+      user-select: none;
+      color: $font-1;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .navbar {
+    height: 80px;
+    padding: 0 $mobilePadding;
+
+    &__links {
+      display: none;
+    }
+    &__menu {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      outline: none;
+      background: none;
+      color: $font-1;
+      svg {
+        height: 35px;
+        width: 35px;
+        stroke-width: 1.5px;
+        stroke: $font-2;
+      }
+      &:focus {
+        svg {
+          stroke: $highlight-1;
+          animation: expand 0.15s ease-in-out;
+        }
+      }
+      @keyframes expand {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: scale(20);
+        }
+      }
+    }
+  }
+}

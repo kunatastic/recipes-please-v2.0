@@ -1,31 +1,23 @@
 {
-  "globals": {
-    "JSX": true
-  },
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 2015,
+    "emaVersion": 2020,
     "sourceType": "module"
   },
-  "settings": {
-    "import/resolver": {
-      "typescript": {}
-    }
-  },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "rules": {
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
-    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
-    "import/extensions": ["error", "ignorePackages", { "ts": "never", "tsx": "never" }],
-    "import/prefer-default-export": "off"
+    "no-console": "warn",
+    "@typescript-eslint/no-explicit-any": "off"
+  },
+  "env": {
+    "node": true,
+    "amd": true,
+    "browser": true
   }
 }
