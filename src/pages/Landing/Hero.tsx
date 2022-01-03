@@ -1,11 +1,13 @@
 import React from 'react';
 
 import HeroDish from '../../assets/heroDish.jpg';
+import { Shiny } from '../../components';
 
 const Hero = () => {
   return (
     <>
       <section id="hero" className="hero">
+        <Shiny top="-60px" bottom="0px" />
         <div className="grid">
           <div className="hero__content">
             <div className="hero__secondary">Chase a new Flavor everyday</div>

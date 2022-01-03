@@ -1,14 +1,16 @@
 .about {
-  min-height: 50vh;
+  min-height: 70vh;
   margin: 0 auto;
   padding: 100px $sectionPadding;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: relative;
-  justify-content: flex-end;
   background-color: $bg-2;
   border-bottom: 2px solid $highlight-1;
+  border-top: 2px solid $highlight-1;
+  z-index: 2;
 
   .title {
     color: $highlight-1;
